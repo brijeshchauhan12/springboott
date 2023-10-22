@@ -2,19 +2,25 @@ package com.springbootcore.springg.controller;
 
 import com.springbootcore.springg.entity.Department;
 import com.springbootcore.springg.service.DepartmentService;
+import jakarta.validation.Valid;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import org.slf4j.Logger;
 
 
 @RestController
 public class DepartmentController {
     @Autowired
     private DepartmentService departmentService;
-    @PostMapping("/departments")
-    public Department saveDepartment(@RequestBody Department department  )   {
 
+    Logger logger = LoggerFactory.getLogger(DepartmentController.class);
+    @PostMapping("/departments")
+    public Department saveDepartment(@Valid @RequestBody Department department  )   {
+          logger.info("New record inserted in the database");
+          
           return departmentService.saveDepartment(department);
     }
     @GetMapping("/departments/{id}")
