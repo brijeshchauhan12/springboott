@@ -1,13 +1,14 @@
 package com.springbootcore.springg.service;
 
 import com.springbootcore.springg.entity.Department;
+import com.springbootcore.springg.error.DepartmentNotFoundException;
 
 import java.util.List;
 
 public interface DepartmentService {
    public Department saveDepartment(Department department);
 
-   public Department getDepartmentById(Long departmentId);
+   public Department getDepartmentById(Long departmentId) throws DepartmentNotFoundException;
 
    public void deleteDepartment(Long departmentId);
 

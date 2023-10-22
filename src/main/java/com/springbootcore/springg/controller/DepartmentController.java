@@ -1,6 +1,7 @@
 package com.springbootcore.springg.controller;
 
 import com.springbootcore.springg.entity.Department;
+import com.springbootcore.springg.error.DepartmentNotFoundException;
 import com.springbootcore.springg.service.DepartmentService;
 import jakarta.validation.Valid;
 import org.slf4j.LoggerFactory;
@@ -20,11 +21,11 @@ public class DepartmentController {
     @PostMapping("/departments")
     public Department saveDepartment(@Valid @RequestBody Department department  )   {
           logger.info("New record inserted in the database");
-          
+
           return departmentService.saveDepartment(department);
     }
     @GetMapping("/departments/{id}")
-    public Department getDepartmentById(@PathVariable("id") Long departmentId){
+    public Department getDepartmentById(@PathVariable("id") Long departmentId) throws DepartmentNotFoundException {
 
         return departmentService.getDepartmentById(departmentId);
     }
