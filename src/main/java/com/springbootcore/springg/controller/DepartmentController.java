@@ -45,12 +45,12 @@ public class DepartmentController {
         return departmentService.updateDepartment(departmentId,department);
     }
 
-//    @GetMapping("/departments/name/{name}")
-//    public Department getDepartmentByName(@PathVariable("name") String name){
-//        return departmentService.getDepartmentByName(name);
-//    }
     @GetMapping("/departments/name/{name}")
-    public List<Department> getAllDepartmentByName(@PathVariable("name") String name){
-        return departmentService.getAllDepartmentByName(name);
+    public Department getDepartmentByName(@PathVariable("name") String name){
+        return departmentService.getDepartmentByName(name);
     }
+//    @GetMapping("/departments/name/{name}")
+//    public List<Department> getAllDepartmentByName(@PathVariable("name") String name){
+//        return departmentService.getAllDepartmentByName(name);
+//    }
 }

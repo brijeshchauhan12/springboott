@@ -16,7 +16,7 @@ public interface DepartmentService {
 
   public  List<Department> getAllDepartments();
 
-//   public Department getDepartmentByName(String name);
+  public Department getDepartmentByName(String name);
 
-    public List<Department> getAllDepartmentByName(String name);
+//    public List<Department> getAllDepartmentByName(String name);
 }

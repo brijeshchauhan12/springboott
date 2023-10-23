@@ -63,14 +63,14 @@ public class DepartmentServiceImpl implements DepartmentService {
         return departmentRepository.findAll();
     }
 
+    @Override
+    public Department getDepartmentByName(String name) {
+
+        return (Department) departmentRepository.findByDepartmentName(name);
+    }
+
 //    @Override
-//    public Department getDepartmentByName(String name) {
-//
+//    public List<Department> getAllDepartmentByName(String name) {
 //        return departmentRepository.findByDepartmentName(name);
 //    }
-
-    @Override
-    public List<Department> getAllDepartmentByName(String name) {
-        return departmentRepository.findByDepartmentName(name);
-    }
 }
