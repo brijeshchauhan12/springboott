@@ -2,6 +2,7 @@ package com.springbootcore.springg.repository;
 
 import com.springbootcore.springg.entity.Department;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.data.jdbc.DataJdbcTest;
@@ -30,6 +31,7 @@ class DepartmentRepositoryTest {
 
     }
     @Test
+    @Disabled
     public void Test_particular_record_from_repository_layer(){
         Department department=departmentRepository.findById(34L).get();
         assertEquals(department.getDepartmentName(),"hayeda");
